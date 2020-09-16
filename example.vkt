@@ -1,0 +1,22 @@
+^^^
+^ this is a
+^ block comment
+^^^
+
+obj bar
+\
+    bar<>
+    \
+        if<>
+        \
+            foo
+        /
+    /
+/
+
+
+
+func foo<> ^this is a comment
+\
+    bar
+/
