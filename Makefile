@@ -1,10 +1,22 @@
 .PHONY: all clean run debug
 
 CC = g++
-SRC = /src/*.cpp
-DEP = /h/*.h
+SRC = $(wildcard src/*.cpp)
+DEP = $(wildcard h/*.h)
+OBJ = $(patsubst %.cpp, %.o, $(wildcard src/*.cpp))
 FLAGS = -Wall
 
+all: Vektor
 
-%.o: %.c $(DEP)
+run: all
+	./Vektor
 
+debug: $(OBJ)
+	$(CC) -g -o vektor.dbg $^ $(FLAGS)
+	gdb vektor.dbg
+
+Vektor: $(OBJ)
+	$(CC) -o $@ $^ $(FLAGS)
+
+clean: 
+	rm -f src/*.o

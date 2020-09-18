@@ -3,13 +3,13 @@
 #include <iostream>
 #include <string>
 
-public class TestEnv
+class TestEnv
 {
 	public:
 		TestEnv();
-		string getInputStr();
+		std::string getInputStr();
 	protected:
-		string inputStr;
-		void procInput(string inputStr);
-		string getNextInput();
-}
+		std::string inputStr;
+		void procInput(std::string inputStr);
+		std::string getNextInput();
+};

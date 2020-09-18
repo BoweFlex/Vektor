@@ -3,13 +3,13 @@
 
 TestEnv::TestEnv() 
 {
-	while ((procInput(inputStr) != "quit<>") && (procInput(inputStr) != "exit<>"))
+	while ((inputStr != "quit<>") && (inputStr != "exit<>"))
 	{
 		procInput(getNextInput());
 	}
 }
 
-TestEnv::getNextInput()
+std::string TestEnv::getNextInput()
 {
 	std::cout << "<<< ";
 	std::cin >> inputStr;
@@ -17,18 +17,15 @@ TestEnv::getNextInput()
 	return inputStr;
 }
 
-TestEnv::procInput(inputStr)
+void TestEnv::procInput(std::string user)
 {
-	try:
-		if((inputStr = "quit<>") || (inputStr = "exit<>"))
-		{
-			exit(EXIT_FAILURE);
-		}
-	catch:
-
+	if((user == "quit<>") || (user == "exit<>"))
+	{
+		exit(EXIT_FAILURE);
+	}
 }
 
-TestEnv::getInputStr()
+std::string TestEnv::getInputStr()
 {
 	return inputStr;
 }
