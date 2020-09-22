@@ -20,3 +20,4 @@ Vektor: $(OBJ)
 
 clean: 
 	rm -f src/*.o
+	rm -f Vektor

@@ -1,5 +1,5 @@
 #include <stdlib.h>     /* exit, EXIT_FAILURE */
-#include "../h/TestEnv.h"
+#include "../h/testenv.h"
 
 TestEnv::TestEnv() 
 {
@@ -22,6 +22,11 @@ void TestEnv::procInput(std::string user)
 	if((user == "quit<>") || (user == "exit<>"))
 	{
 		exit(EXIT_FAILURE);
+	}
+	else if(user == "printOps<>")
+	{
+		Token test = Token();
+		test.printMap();
 	}
 }
 
